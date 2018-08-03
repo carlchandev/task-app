@@ -5,6 +5,7 @@ const initialData = {
     'task-3': { id: 'task-3', content: 'Andy God' },
     'task-4': { id: 'task-4', content: 'Nic God' },
     'task-5': { id: 'task-5', content: 'Dragon God' },
+    'task-6': { id: 'task-5', content: 'Clement God' },
   },
   columns: {
     'column-1': {
@@ -16,6 +17,7 @@ const initialData = {
         'task-3',
         'task-4',
         'task-5',
+        'task-6',
       ],
     },
   },
