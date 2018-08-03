@@ -8,7 +8,21 @@ import '@atlaskit/css-reset';
 class App extends Component {
     state = initialData;
 
+    onDragStart = () => {
+        document.body.style.color = 'orange';
+        document.body.style.transition = 'background-color 0.2s ease';
+    }
+
+    onDragUpdate = update => {
+        const { destination } = update;
+        const opacity = destination
+            ? destination.index / Object.keys(this.state.tasks).length
+            : 0;
+        document.body.style.backgroundColor = `rgba( 153, 141, 217, ${opacity})`;
+    }
+
     onDragEnd = result => {
+        document.body.style.color = 'inherit';
         const { destination, source, draggableId } = result;
 
         if (!destination) {
@@ -40,7 +54,11 @@ class App extends Component {
 
     render() {
         return (
-            <DragDropContext onDragEnd={this.onDragEnd}>
+            <DragDropContext
+                onDragStart={this.onDragStart}
+                onDragUpdate={this.onDragUpdate}
+                onDragEnd={this.onDragEnd}
+            >
                 {this.state.columnOrder.map(columnId => {
                     console.log(columnId);
                     const column = this.state.columns[columnId];
