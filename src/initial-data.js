@@ -5,7 +5,8 @@ const initialData = {
     'task-3': { id: 'task-3', content: '婆婆券' },
     'task-4': { id: 'task-4', content: '飲茶券' },
     'task-5': { id: 'task-5', content: '咖啡券' },
-    'task-6': { id: 'task-5', content: '睇戲券' },
+    'task-6': { id: 'task-6', content: '睇戲券' },
+    'task-7': { id: 'task-7', content: '唔嬲券' },
   },
   columns: {
     'column-1': {
